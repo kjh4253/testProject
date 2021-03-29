@@ -1,0 +1,430 @@
+git add a.txt
+git init
+git status
+
+git commit -m 'Add a.txt'
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+git config --global user.email "jhkim4253@naver.com"
+git config --global user.name "KIMJAEHWAN"
+
+git config --global -l
+
+git commit -m 'Add README'
+
+
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+
+$ git commit -m 'Add README'
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+
+touch c.txt
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        a.txt
+        c.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+git add .
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   a.txt
+        new file:   c.txt
+
+
+kjh4253@DESKTOP-I7VE76G MINGW64 ~/gitTest (master)
+$
+
+git commit
+
+Delete b text files & Update a.txt
+
+b 복사본 모두 삭제
+a.txt 1 추가
+c.txt 추가
+
+git commit -m 'Update a and b'
+
+git log
+git log --oneline -1
+
+git log -p (--patch)
+git log -1 --stat
+
+
+## git config
+
+git config -l
+
+git config --global core.quotepath false
+
+ko_+kR, UTF-8
+touch setup.exe
+vi .gitignore
+setup.exe
+
+## 실습 ##
+1. 폴더를 만들고(testProject)
+2. README.md 파일을 만들고
+3. 커밋
+
+cd testProject
+git init
+touch README.md
+git status
+git add .
+git status
+
+git commit -m 'Add README.md'
+
+git log --oneline
+----------------------------------------------------------------------------------------
+##### github, git 원격저장소 <> gitlab, bitbucket #####
+
+gihub 레퍼지토리 생성
+testProject
+
+Try out GitHub Discussions! Beta
+Discussions allows community members 
+to start conversations and ask questions without opening issues. 
+Get started by toggling Discussions under Features.
+
+
+git remote add origin https://github.com/kjh4253/testProject.git
+git push -u origin main
+
+git bash에서 붙여넣기
+
+
+$ git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/kjh4253/testProject.git'
+
+
+
+git add .
+git commit -m 'First commit'
+
+
+git remote -v
+
+git push -u origin master
+master로 하니까 되네요
+
+$ git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 222 bytes | 222.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/kjh4253/testProject.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+$ git status
+On branch master
+nothing to commit, working tree clean
+status에는 안보인에ㅛ
+
+김탁희강사님에서 나에게:  (DM) 11:26 AM
+git remote -v   결과 보여주시겠어요?
+
+나에서 김탁희강사님에게:  (DM) 11:26 AM
+$ git remote -v
+origin  https://github.com/kjh4253/testProject.git (fetch)
+origin  https://github.com/kjh4253/testProject.git (push)
+
+김탁희강사님에서 나에게:  (DM) 11:27 AM
+git push origin master 하면 안되시나요?
+
+나에서 김탁희강사님에게:  (DM) 11:28 AM
+master로 하니까 되네요
+
+박지호님이 모두에게:  11:28 AM
+error: src refspec master does not match any
+error: failed to push some refs to 'https'
+
+
+---------------------
+touch 123.txt
+touch .gitignore
+git add .
+
+git commit -m "Add .gitignore"
+
+123.txt는 워킹 디렉토리에
+
+git push origin master
+
+
+git log --oneline
+
+## 기본 명령어
+git remote -v 
+
+push
+clone : 원격저장소 복제
+pull : 가져오기
+
+원격 저장소에서 작성함!!
+remote.txt
+
+## 줌 녹화 ##
+
+
+
+git fetch origin
+git status
+git log --oneline --all
+
+git full remote.txt
+
+git merge origin/master
+git log --oneline --all
+
+touch index.html
+touch index.css
+
+git status
+git add .
+
+git restore --staged index.html
+
+git commit -m 'Add index.html'
+git commit -m 'Add index.css'
+
+
+개발a
+개발b
+개발c
+개발d
+개발e
+
+이전 상태로 돌아가고 싶다.
+git restore <file>
+
+git restore README.md
+
+touch new.txt
+touch new1.txt
+
+git status
+
+git log --oneline -1
+git commit --amend (메시지 변경, )
+
+touch omit.txt
+
+
+git status
+git add omit.txt
+git commit --amend (스테이징 상태를 커밋)
+
+
+
+-------------------------
+<branch>
+
+git init
+touch README.md
+git status
+git add .
+git status
+
+git commit -m 'Add README.md'
+
+git branch
+git checkout test-1
+
+git log --oneline
+
+touch touch-1.txt
+
+git add .
+git commit -m 'Add test-1'
+
+git checkout master
+git merge test-1
+
+git log --oneline --all
+
+## merge 커밋
+git branch -d test-1
+git checkout -b feature-1
+
+touch feature-1.png
+git add .
+git status
+
+git commit -m 'feature-1.png'
+
+git log --oneline --all
+git checkout master
+touch hotfix.txt
+git add .
+git commit -m 'HotFix'
+git merge feature-1
+
+git log --oneline --all
+git log --oneline --graph
+------------
+3-way merge
+
+git status
+git branch
+git branch -d feature-1
+git checkout -b doc-1
+git commit -m 'Update README'
+git checkout master
+git add .
+git commit -m 'Update README@master'
+git merge doc-1
+
+git add README.md
+git commit -m 'Update README'
+
+git checkout master
+
+------------
+3-way merge
+
+git status
+git branch
+git branch -d doc-1
+git checkout -b feature-2
+touch test-2.txt
+git add .
+git commit -m 'Add test-2'
+git checkout master
+git merge --no-ff test-2
+
+git log --oneline -all -3
+
+
+## 로컬에서 수정
+
+git push
+git add .
+git commit -m 'update README'
+
+git push origin master
+
+git pull origin master
+
+-------------------------------------
+http://git-school.github.io/visualizing-git/
+
+### fast-forward 상황
+
+git commit
+git checkout -b f-1
+git commit
+
+git checkout master
+git merge f-1 
+(you have perforemd a fast-forward merge) master HEAD
+
+### 3way merge
+git commit
+git branch -d f-1
+git checkout -b f-2
+git commit
+git commit
+git commit
+git checkout master
+git commit
+git commit
+git merge f-2
+
+# 고급명령어
+rebase : 내이력, 히스토리 깔끔하게, 내 개발 흐름을 한줄로 만들어서 보낼 때
+(fe) git rebase master
+(merge) git merge fe
+
+--
+git commit
+git commit
+git checkout -b feature
+git commit
+git commit
+git checkout master
+git commit
+
+git checkout feature
+git rebase master
+git checkout master
+git merge feature
+
+
+# cherry-pick : 원하는 부분만 가져온다
+git commit
+git checkout -b new-feature
+git commit
+git commit
+git commit
+git checkout master
+git commit
+git cherry-pick 4bd8dc5
+git branch -d new-feature
+
+# reset 커밋 내용 되돌리기
+git commit
+git commit
+git reset --hard b8acb3d
+git commit
+git commit
+git commit
+git reset --hard 348853a
+
+# revert 커밋 내용 되돌리기
+git commit
+git commit
+git revert 
+
+#### 
+# 기존에는 마스터로 합쳤다, 브랜치에서 작업
+git checkout -b feature/signup
+touch signup.html
+touch signup.css
+
+git add .
+git commit - m 'Add signup'
+git push origin feature/signup
+
+github에서 Componet & pull request 누름
+[x] 회원가입 창
+[x] css
+
+Reviewers (코드리뷰)
+Assignees (결재)
+
+
+
+
+
+
+
+
+
+
